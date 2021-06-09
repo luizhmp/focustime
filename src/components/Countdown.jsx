@@ -5,11 +5,13 @@ import { colors } from "../utils/colors";
 
 const minutesToMillis = (min) => min * 1000 * 60;
 
-export const Countdown = ({ minutes = 20, isPaused, onProgress }) => {
+export const Countdown = ({ minutes = 20, isPaused, onProgress, onEnd }) => {
   const interval = useRef(null);
   const countDown = () => {
     setMillis((time) => {
       if (time === 0) {
+        clearInterval(interval.current);
+        onEnd();
         return time;
       }
       const timeLeft = time - 1000;
