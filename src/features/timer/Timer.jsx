@@ -9,7 +9,7 @@ import { colors } from "../../utils/colors";
 import { spacing } from "../../utils/sizes";
 import { Timing } from "./Timing";
 
-const DEFAULT_TIME = 0.1;
+const DEFAULT_TIME = 20;
 
 export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
   useKeepAwake();
